@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this snapshot in academic research, please cite it and report the release tag or commit used. Citation is requested, not an additional license condition."
+type: software
+title: "RoboSpace Fit v2.0: Academic Research Snapshot"
+authors:
+  - name: "RoboSpace Fit contributors"
+version: "2.0.0-research.20260928"
+date-released: "2026-09-28"
+repository-code: "https://github.com/willbyte-ai/robospace-fit-research"
+url: "https://github.com/willbyte-ai/robospace-fit-research/releases/tag/v2.0.0-research-20260928"
+license-url: "https://github.com/willbyte-ai/robospace-fit-research/blob/main/LICENSE"
+abstract: "A frozen academic research snapshot of a browser-based 3D factory layout and robot placement analysis studio with synthetic factory assets, geometric analysis, scenario comparison, and economic assumptions."
+keywords:
+  - robot placement
+  - factory layout
+  - synthetic environments
+  - reproducibility

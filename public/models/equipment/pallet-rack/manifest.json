@@ -1,0 +1,39 @@
+{
+  "id": "pallet-rack",
+  "name": "3단 팔레트 랙",
+  "description": "브레이싱, 연결 핀, 앵커 베이스와 팔레트 적재물을 포함한 3단 보관 랙",
+  "modelKind": "original-concept-equipment",
+  "units": "meters",
+  "upAxis": "Z",
+  "origin": "ground center",
+  "dimensions": {
+    "width": 2.4,
+    "depth": 1.2,
+    "height": 3.0
+  },
+  "geometry": {
+    "meshCount": 8,
+    "materialCount": 8,
+    "triangleCount": 23724,
+    "bounds": {
+      "min": [
+        -1.1999999284744263,
+        -0.6000000238418579,
+        0.0
+      ],
+      "max": [
+        1.1999999284744263,
+        0.6000000238418579,
+        3.0
+      ]
+    }
+  },
+  "details": [
+    "Four slotted open-channel uprights with anchored base plates and guards",
+    "Three beam levels with bolted end connectors and five cross supports each",
+    "Alternating side diagonal braces and rear fall restraint structure",
+    "Six fork-entry pallets with molded blocks and separate deck boards",
+    "Four ribbed returnable bins and four strapped upper cases with blank asset labels"
+  ],
+  "note": "Original conceptual visualization, not manufacturer CAD or certified equipment specifications."
+}

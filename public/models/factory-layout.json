@@ -1,0 +1,1193 @@
+{
+  "title": "RoboSpace Fit · 식품 포장 공장 배치 검토 시나리오",
+  "version": "1.0.0",
+  "units": "metres",
+  "provenance": "Original procedural geometry created through live Blender MCP. All equipment dimensions are explicit scenario assumptions, not a field survey or OEM CAD.",
+  "coordinateSystem": {
+    "source": "Blender Z up; front = negative Y",
+    "export": "glTF/Three.js Y up",
+    "conversion": "[x,y,z]_Blender -> [x,z,-y]_Three",
+    "floorTop": 0.003
+  },
+  "hall": {
+    "width": 24,
+    "depth": 18,
+    "height": 4.7,
+    "boundsXZ": [
+      -12,
+      -9,
+      12,
+      9
+    ],
+    "cutaway": [
+      "front",
+      "right",
+      "roof"
+    ]
+  },
+  "robot": {
+    "model": "RS-1850 Concept",
+    "reach": 1.85,
+    "payload": 12,
+    "placement": [
+      0.8,
+      0.035,
+      0
+    ],
+    "baseFootprint": [
+      0.61,
+      0.59
+    ],
+    "joints": [
+      {
+        "node": "J1_Base",
+        "parent": "Robot_Root",
+        "pivotBlender": [
+          0.0,
+          0.0,
+          0.26
+        ],
+        "axisBlender": "Z",
+        "axisThree": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "node": "J2_Shoulder",
+        "parent": "J1_Base",
+        "pivotBlender": [
+          0.0,
+          0.0,
+          0.62
+        ],
+        "axisBlender": "Y",
+        "axisThree": [
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "node": "J3_Elbow",
+        "parent": "J2_Shoulder",
+        "pivotBlender": [
+          -0.45,
+          0.0,
+          1.36
+        ],
+        "axisBlender": "Y",
+        "axisThree": [
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "node": "J4_Forearm",
+        "parent": "J3_Elbow",
+        "pivotBlender": [
+          -0.73,
+          0.0,
+          1.39
+        ],
+        "axisBlender": "X",
+        "axisThree": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "node": "J5_Wrist",
+        "parent": "J4_Forearm",
+        "pivotBlender": [
+          -1.18,
+          0.0,
+          1.43
+        ],
+        "axisBlender": "Y",
+        "axisThree": [
+          0,
+          0,
+          -1
+        ]
+      },
+      {
+        "node": "J6_Tool",
+        "parent": "J5_Wrist",
+        "pivotBlender": [
+          -1.34,
+          0.0,
+          1.22
+        ],
+        "axisBlender": "Z",
+        "axisThree": [
+          0,
+          1,
+          0
+        ]
+      }
+    ],
+    "tcpNode": "TCP_Vacuum_Grip",
+    "restTcpLocal": [
+      -1.34,
+      0.915,
+      0
+    ],
+    "pickPoint": [
+      -0.8,
+      0.97,
+      0
+    ],
+    "placePoint": [
+      2,
+      1.15,
+      -0.5
+    ],
+    "conceptual": true,
+    "animationHint": "Use additive rotations about joint local axes, preserve imported quaternion and local position. J1_Base rotates about local Y in glTF; J2/J3/J5 about local negative Z."
+  },
+  "equipment": [
+    {
+      "id": "infeed",
+      "label": "원료 투입 롤러 컨베이어",
+      "meshPrefix": "infeed__",
+      "centerBlender": [
+        -9.449999809265137,
+        -0.13750000298023224,
+        0.5099999951198697
+      ],
+      "sizeBlender": [
+        2.3500003814697266,
+        1.2050000131130219,
+        0.9999999906867743
+      ],
+      "center": [
+        -9.45,
+        0.51,
+        0.1375
+      ],
+      "size": [
+        2.35,
+        1.0,
+        1.205
+      ],
+      "footprintXZ": {
+        "minX": -10.625,
+        "maxX": -8.275,
+        "minZ": -0.465,
+        "maxZ": 0.74
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.01,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -10.625,
+        "maxX": -8.275,
+        "minZ": -0.465,
+        "maxZ": 0.74
+      }
+    },
+    {
+      "id": "flow_wrapper",
+      "label": "수평형 필름 포장기 FW-120",
+      "meshPrefix": "flow_wrapper__",
+      "centerBlender": [
+        -6.900000095367432,
+        -0.08249998092651367,
+        1.1050000237300992
+      ],
+      "sizeBlender": [
+        2.6999998092651367,
+        1.3650000095367432,
+        2.1900000479072332
+      ],
+      "center": [
+        -6.9,
+        1.105,
+        0.0825
+      ],
+      "size": [
+        2.7,
+        2.19,
+        1.365
+      ],
+      "footprintXZ": {
+        "minX": -8.25,
+        "maxX": -5.55,
+        "minZ": -0.6,
+        "maxZ": 0.765
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.2,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -8.25,
+        "maxX": -5.55,
+        "minZ": -0.6,
+        "maxZ": 0.765
+      }
+    },
+    {
+      "id": "metal_detector",
+      "label": "금속 검출 터널",
+      "meshPrefix": "metal_detector__",
+      "centerBlender": [
+        -4.823999881744385,
+        -0.11250001192092896,
+        1.0449999617412686
+      ],
+      "sizeBlender": [
+        1.4479999542236328,
+        1.2350000143051147,
+        2.069999923929572
+      ],
+      "center": [
+        -4.824,
+        1.045,
+        0.1125
+      ],
+      "size": [
+        1.448,
+        2.07,
+        1.235
+      ],
+      "footprintXZ": {
+        "minX": -5.548,
+        "maxX": -4.1,
+        "minZ": -0.505,
+        "maxZ": 0.73
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.08,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -5.548,
+        "maxX": -4.1,
+        "minZ": -0.505,
+        "maxZ": 0.73
+      }
+    },
+    {
+      "id": "checkweigher",
+      "label": "중량 선별기·에어 리젝터",
+      "meshPrefix": "checkweigher__",
+      "centerBlender": [
+        -3.4829999208450317,
+        -0.17249998450279236,
+        0.852500026114285
+      ],
+      "sizeBlender": [
+        1.3659999370574951,
+        1.7449999451637268,
+        1.6850000526756048
+      ],
+      "center": [
+        -3.483,
+        0.8525,
+        0.1725
+      ],
+      "size": [
+        1.366,
+        1.685,
+        1.745
+      ],
+      "footprintXZ": {
+        "minX": -4.166,
+        "maxX": -2.8,
+        "minZ": -0.7,
+        "maxZ": 1.045
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.695,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -4.166,
+        "maxX": -2.8,
+        "minZ": -0.7,
+        "maxZ": 1.045
+      }
+    },
+    {
+      "id": "pick_conveyor",
+      "label": "로봇 픽업 롤러 컨베이어",
+      "meshPrefix": "pick_conveyor__",
+      "centerBlender": [
+        -1.6200000047683716,
+        -0.13750001788139343,
+        0.5099999951198697
+      ],
+      "sizeBlender": [
+        2.200000047683716,
+        1.1850000023841858,
+        0.9999999906867743
+      ],
+      "center": [
+        -1.62,
+        0.51,
+        0.1375
+      ],
+      "size": [
+        2.2,
+        1.0,
+        1.185
+      ],
+      "footprintXZ": {
+        "minX": -2.72,
+        "maxX": -0.52,
+        "minZ": -0.455,
+        "maxZ": 0.73
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.01,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -2.72,
+        "maxX": -0.52,
+        "minZ": -0.455,
+        "maxZ": 0.73
+      }
+    },
+    {
+      "id": "cartoner",
+      "label": "자동 카톤 성형·박스 포장기 CE-40",
+      "meshPrefix": "cartoner__",
+      "centerBlender": [
+        -5.300000071525574,
+        3.212499976158142,
+        1.3049999522045255
+      ],
+      "sizeBlender": [
+        4.200000047683716,
+        1.9950001239776611,
+        2.5899999048560858
+      ],
+      "center": [
+        -5.3,
+        1.305,
+        -3.2125
+      ],
+      "size": [
+        4.2,
+        2.59,
+        1.995
+      ],
+      "footprintXZ": {
+        "minX": -7.4,
+        "maxX": -3.2,
+        "minZ": -4.21,
+        "maxZ": -2.215
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.6,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -7.4,
+        "maxX": -3.2,
+        "minZ": -4.21,
+        "maxZ": -2.215
+      }
+    },
+    {
+      "id": "robot_controller",
+      "label": "로봇 제어반",
+      "meshPrefix": "robot_controller__",
+      "centerBlender": [
+        2.522613048553467,
+        1.425010308623314,
+        0.9599999785423279
+      ],
+      "sizeBlender": [
+        3.554774284362793,
+        2.2599795162677765,
+        1.9199999570846558
+      ],
+      "center": [
+        2.5226,
+        0.96,
+        -1.425
+      ],
+      "size": [
+        3.5548,
+        1.92,
+        2.26
+      ],
+      "footprintXZ": {
+        "minX": 0.7452,
+        "maxX": 4.3,
+        "minZ": -2.555,
+        "maxZ": -0.295
+      },
+      "minHeight": 0.0,
+      "maxHeight": 1.92,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 3.4,
+        "maxX": 4.3,
+        "minZ": -2.31,
+        "maxZ": -1.5
+      },
+      "collisionNote": "Enclosure footprint only; decorative floor cabling excluded."
+    },
+    {
+      "id": "warehouse_rack",
+      "label": "완제품 3단 적재 랙",
+      "meshPrefix": "warehouse_rack__",
+      "centerBlender": [
+        8.600000143051147,
+        5.7250001430511475,
+        1.8200000524520874
+      ],
+      "sizeBlender": [
+        5.389999866485596,
+        1.440000057220459,
+        3.640000104904175
+      ],
+      "center": [
+        8.6,
+        1.82,
+        -5.725
+      ],
+      "size": [
+        5.39,
+        3.64,
+        1.44
+      ],
+      "footprintXZ": {
+        "minX": 5.905,
+        "maxX": 11.295,
+        "minZ": -6.445,
+        "maxZ": -5.005
+      },
+      "minHeight": 0.0,
+      "maxHeight": 3.64,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 5.905,
+        "maxX": 11.295,
+        "minZ": -6.445,
+        "maxZ": -5.005
+      }
+    },
+    {
+      "id": "dispatch_pallets",
+      "label": "출하 대기 파렛트 4개",
+      "meshPrefix": "dispatch_pallets__",
+      "centerBlender": [
+        8.600000143051147,
+        2.1500000655651093,
+        0.5127500295639038
+      ],
+      "sizeBlender": [
+        4.400000095367432,
+        2.7100000977516174,
+        1.0255000591278076
+      ],
+      "center": [
+        8.6,
+        0.5128,
+        -2.15
+      ],
+      "size": [
+        4.4,
+        1.0255,
+        2.71
+      ],
+      "footprintXZ": {
+        "minX": 6.4,
+        "maxX": 10.8,
+        "minZ": -3.505,
+        "maxZ": -0.795
+      },
+      "minHeight": 0.0,
+      "maxHeight": 1.0255,
+      "fixed": false,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 6.4,
+        "maxX": 10.8,
+        "minZ": -3.505,
+        "maxZ": -0.795
+      }
+    },
+    {
+      "id": "ingredient_crates",
+      "label": "원료 플라스틱 크레이트",
+      "meshPrefix": "ingredient_crates__",
+      "centerBlender": [
+        -9.25,
+        6.04200005531311,
+        0.540000026114285
+      ],
+      "sizeBlender": [
+        1.8199996948242188,
+        1.636000156402588,
+        1.0600000526756048
+      ],
+      "center": [
+        -9.25,
+        0.54,
+        -6.042
+      ],
+      "size": [
+        1.82,
+        1.06,
+        1.636
+      ],
+      "footprintXZ": {
+        "minX": -10.16,
+        "maxX": -8.34,
+        "minZ": -6.86,
+        "maxZ": -5.224
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.07,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -10.16,
+        "maxX": -8.34,
+        "minZ": -6.86,
+        "maxZ": -5.224
+      }
+    },
+    {
+      "id": "trolley",
+      "label": "스테인리스 이동식 카트",
+      "meshPrefix": "trolley__",
+      "centerBlender": [
+        -8.199999809265137,
+        -2.850000023841858,
+        0.5817658379673958
+      ],
+      "sizeBlender": [
+        1.5799999237060547,
+        0.8399999141693115,
+        1.1335316747426987
+      ],
+      "center": [
+        -8.2,
+        0.5818,
+        2.85
+      ],
+      "size": [
+        1.58,
+        1.1335,
+        0.84
+      ],
+      "footprintXZ": {
+        "minX": -8.99,
+        "maxX": -7.41,
+        "minZ": 2.43,
+        "maxZ": 3.27
+      },
+      "minHeight": 0.015,
+      "maxHeight": 1.1485,
+      "fixed": false,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -8.99,
+        "maxX": -7.41,
+        "minZ": 2.43,
+        "maxZ": 3.27
+      }
+    },
+    {
+      "id": "wash_station",
+      "label": "위생 세척 스테이션",
+      "meshPrefix": "wash_station__",
+      "centerBlender": [
+        -10.839999675750732,
+        3.100000023841858,
+        0.7824999736621976
+      ],
+      "sizeBlender": [
+        1.380000114440918,
+        0.6800000667572021,
+        1.54499994777143
+      ],
+      "center": [
+        -10.84,
+        0.7825,
+        -3.1
+      ],
+      "size": [
+        1.38,
+        1.545,
+        0.68
+      ],
+      "footprintXZ": {
+        "minX": -11.53,
+        "maxX": -10.15,
+        "minZ": -3.44,
+        "maxZ": -2.76
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.555,
+      "fixed": true,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": -11.53,
+        "maxX": -10.15,
+        "minZ": -3.44,
+        "maxZ": -2.76
+      }
+    },
+    {
+      "id": "amr",
+      "label": "AMR 운반 로봇",
+      "meshPrefix": "amr__",
+      "centerBlender": [
+        5.208499908447266,
+        -5.300000190734863,
+        0.48374999314546585
+      ],
+      "sizeBlender": [
+        1.2170000076293945,
+        0.9200000762939453,
+        0.9474999755620956
+      ],
+      "center": [
+        5.2085,
+        0.4837,
+        5.3
+      ],
+      "size": [
+        1.217,
+        0.9475,
+        0.92
+      ],
+      "footprintXZ": {
+        "minX": 4.6,
+        "maxX": 5.817,
+        "minZ": 4.84,
+        "maxZ": 5.76
+      },
+      "minHeight": 0.01,
+      "maxHeight": 0.9575,
+      "fixed": false,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 4.6,
+        "maxX": 5.817,
+        "minZ": 4.84,
+        "maxZ": 5.76
+      }
+    },
+    {
+      "id": "pallet_pick",
+      "label": "로봇 적재 파렛트",
+      "meshPrefix": "pallet_pick__",
+      "centerBlender": [
+        1.9999999403953552,
+        0.49999999767169356,
+        0.5127500295639038
+      ],
+      "sizeBlender": [
+        1.1999999284744263,
+        1.0099999951198697,
+        1.0255000591278076
+      ],
+      "center": [
+        2.0,
+        0.5128,
+        -0.5
+      ],
+      "size": [
+        1.2,
+        1.0255,
+        1.01
+      ],
+      "footprintXZ": {
+        "minX": 1.4,
+        "maxX": 2.6,
+        "minZ": -1.005,
+        "maxZ": 0.005
+      },
+      "minHeight": 0.0,
+      "maxHeight": 1.0255,
+      "fixed": false,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 1.4,
+        "maxX": 2.6,
+        "minZ": -1.005,
+        "maxZ": 0.005
+      }
+    },
+    {
+      "id": "pallet_spare",
+      "label": "빈 파렛트 스테이션",
+      "meshPrefix": "pallet_spare__",
+      "centerBlender": [
+        3.5999999046325684,
+        0.7000000178813934,
+        0.08799999952316284
+      ],
+      "sizeBlender": [
+        1.1999998092651367,
+        1.0100000500679016,
+        0.17599999904632568
+      ],
+      "center": [
+        3.6,
+        0.088,
+        -0.7
+      ],
+      "size": [
+        1.2,
+        0.176,
+        1.01
+      ],
+      "footprintXZ": {
+        "minX": 3.0,
+        "maxX": 4.2,
+        "minZ": -1.205,
+        "maxZ": -0.195
+      },
+      "minHeight": 0.0,
+      "maxHeight": 0.176,
+      "fixed": false,
+      "conceptual": true,
+      "collisionFootprintXZ": {
+        "minX": 3.0,
+        "maxX": 4.2,
+        "minZ": -1.205,
+        "maxZ": -0.195
+      }
+    }
+  ],
+  "fences": [
+    {
+      "id": "fence_0",
+      "start": [
+        -1.6,
+        -3
+      ],
+      "end": [
+        1.6,
+        -3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_1",
+      "start": [
+        1.6,
+        -3
+      ],
+      "end": [
+        4.8,
+        -3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_2",
+      "start": [
+        4.8,
+        -3
+      ],
+      "end": [
+        4.8,
+        0
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_3",
+      "start": [
+        4.8,
+        0
+      ],
+      "end": [
+        4.8,
+        3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_4",
+      "start": [
+        4.8,
+        3
+      ],
+      "end": [
+        2.8,
+        3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_5",
+      "start": [
+        1.5,
+        3
+      ],
+      "end": [
+        -1.6,
+        3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_6",
+      "start": [
+        -1.6,
+        3
+      ],
+      "end": [
+        -1.6,
+        0.7
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_7",
+      "start": [
+        -1.6,
+        -0.7
+      ],
+      "end": [
+        -1.6,
+        -3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": false
+    },
+    {
+      "id": "fence_8",
+      "start": [
+        1.5,
+        3
+      ],
+      "end": [
+        2.8,
+        3
+      ],
+      "height": 2.01,
+      "thickness": 0.12,
+      "gate": true
+    }
+  ],
+  "aisles": [
+    {
+      "id": "amr_lane",
+      "boundsXZ": [
+        -11,
+        4.45,
+        11,
+        6.25
+      ],
+      "width": 1.8,
+      "oneWay": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "flow": [
+    "infeed",
+    "flow_wrapper",
+    "metal_detector",
+    "checkweigher",
+    "pick_conveyor",
+    "robot",
+    "pallet_pick",
+    "amr",
+    "dispatch_pallets"
+  ],
+  "exportNotes": {
+    "factoryContainsRobot": false,
+    "factoryMeshMaterialBatches": 175,
+    "robotMeshMaterialBatches": 43,
+    "textLabelsAreGeometry": true
+  },
+  "colliders": [
+    {
+      "id": "infeed",
+      "label": "원료 투입 롤러 컨베이어",
+      "bounds": {
+        "minX": -10.625,
+        "maxX": -8.275,
+        "minZ": -0.465,
+        "maxZ": 0.74
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.01,
+      "movable": false
+    },
+    {
+      "id": "flow_wrapper",
+      "label": "수평형 필름 포장기 FW-120",
+      "bounds": {
+        "minX": -8.25,
+        "maxX": -5.55,
+        "minZ": -0.6,
+        "maxZ": 0.765
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.2,
+      "movable": false
+    },
+    {
+      "id": "metal_detector",
+      "label": "금속 검출 터널",
+      "bounds": {
+        "minX": -5.548,
+        "maxX": -4.1,
+        "minZ": -0.505,
+        "maxZ": 0.73
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.08,
+      "movable": false
+    },
+    {
+      "id": "checkweigher",
+      "label": "중량 선별기·에어 리젝터",
+      "bounds": {
+        "minX": -4.166,
+        "maxX": -2.8,
+        "minZ": -0.7,
+        "maxZ": 1.045
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.695,
+      "movable": false
+    },
+    {
+      "id": "pick_conveyor",
+      "label": "로봇 픽업 롤러 컨베이어",
+      "bounds": {
+        "minX": -2.72,
+        "maxX": -0.52,
+        "minZ": -0.455,
+        "maxZ": 0.73
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.01,
+      "movable": false
+    },
+    {
+      "id": "cartoner",
+      "label": "자동 카톤 성형·박스 포장기 CE-40",
+      "bounds": {
+        "minX": -7.4,
+        "maxX": -3.2,
+        "minZ": -4.21,
+        "maxZ": -2.215
+      },
+      "minHeight": 0.01,
+      "maxHeight": 2.6,
+      "movable": false
+    },
+    {
+      "id": "robot_controller",
+      "label": "로봇 제어반",
+      "bounds": {
+        "minX": 3.4,
+        "maxX": 4.3,
+        "minZ": -2.31,
+        "maxZ": -1.5
+      },
+      "minHeight": 0.0,
+      "maxHeight": 1.92,
+      "movable": false
+    },
+    {
+      "id": "warehouse_rack",
+      "label": "완제품 3단 적재 랙",
+      "bounds": {
+        "minX": 5.905,
+        "maxX": 11.295,
+        "minZ": -6.445,
+        "maxZ": -5.005
+      },
+      "minHeight": 0.0,
+      "maxHeight": 3.64,
+      "movable": false
+    },
+    {
+      "id": "ingredient_crates",
+      "label": "원료 플라스틱 크레이트",
+      "bounds": {
+        "minX": -10.16,
+        "maxX": -8.34,
+        "minZ": -6.86,
+        "maxZ": -5.224
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.07,
+      "movable": false
+    },
+    {
+      "id": "trolley",
+      "label": "스테인리스 이동식 카트",
+      "bounds": {
+        "minX": -8.99,
+        "maxX": -7.41,
+        "minZ": 2.43,
+        "maxZ": 3.27
+      },
+      "minHeight": 0.015,
+      "maxHeight": 1.1485,
+      "movable": true
+    },
+    {
+      "id": "wash_station",
+      "label": "위생 세척 스테이션",
+      "bounds": {
+        "minX": -11.53,
+        "maxX": -10.15,
+        "minZ": -3.44,
+        "maxZ": -2.76
+      },
+      "minHeight": 0.01,
+      "maxHeight": 1.555,
+      "movable": false
+    },
+    {
+      "id": "pallet_pick",
+      "label": "로봇 적재 파렛트",
+      "bounds": {
+        "minX": 1.4,
+        "maxX": 2.6,
+        "minZ": -1.005,
+        "maxZ": 0.005
+      },
+      "minHeight": 0.0,
+      "maxHeight": 1.0255,
+      "movable": true
+    },
+    {
+      "id": "pallet_spare",
+      "label": "빈 파렛트 스테이션",
+      "bounds": {
+        "minX": 3.0,
+        "maxX": 4.2,
+        "minZ": -1.205,
+        "maxZ": -0.195
+      },
+      "minHeight": 0.0,
+      "maxHeight": 0.176,
+      "movable": true
+    },
+    {
+      "id": "dispatch_pallet_1",
+      "label": "출하 파렛트",
+      "bounds": {
+        "minX": 6.4,
+        "maxX": 7.6,
+        "minZ": -1.8050000000000002,
+        "maxZ": -0.795
+      },
+      "minHeight": 0,
+      "maxHeight": 1.03,
+      "movable": true
+    },
+    {
+      "id": "dispatch_pallet_2",
+      "label": "출하 파렛트",
+      "bounds": {
+        "minX": 8.0,
+        "maxX": 9.2,
+        "minZ": -1.8050000000000002,
+        "maxZ": -0.795
+      },
+      "minHeight": 0,
+      "maxHeight": 1.03,
+      "movable": true
+    },
+    {
+      "id": "dispatch_pallet_3",
+      "label": "출하 파렛트",
+      "bounds": {
+        "minX": 9.6,
+        "maxX": 10.799999999999999,
+        "minZ": -1.8050000000000002,
+        "maxZ": -0.795
+      },
+      "minHeight": 0,
+      "maxHeight": 1.03,
+      "movable": true
+    },
+    {
+      "id": "dispatch_pallet_4",
+      "label": "출하 파렛트",
+      "bounds": {
+        "minX": 9.6,
+        "maxX": 10.799999999999999,
+        "minZ": -3.505,
+        "maxZ": -2.495
+      },
+      "minHeight": 0,
+      "maxHeight": 1.03,
+      "movable": true
+    }
+  ],
+  "renderHints": {
+    "recommendedCamera": {
+      "position": [
+        25,
+        27,
+        32
+      ],
+      "target": [
+        0,
+        0.65,
+        -1
+      ],
+      "orthographicSpan": 32.5
+    },
+    "ambientIntensity": 0.6,
+    "environment": "studio / neutral HDRI",
+    "exposure": 1.1,
+    "shadowLightPosition": [
+      2,
+      16,
+      8
+    ],
+    "shadowBounds": [
+      -16,
+      16,
+      -14,
+      14
+    ],
+    "maxShadowMap": 2048,
+    "colorPalette": [
+      "stainless silver",
+      "deep blue enamel",
+      "warm kraft brown",
+      "safety yellow",
+      "cool gray epoxy"
+    ],
+    "notes": "GLBs contain geometry and materials only. Supply scene lights / environment. Preserve authored materials."
+  }
+}

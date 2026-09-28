@@ -1,0 +1,155 @@
+{
+  "id": "fanuc-m20id25",
+  "name": "FANUC M-20iD/25",
+  "manufacturer": "FANUC",
+  "category": "중하중 산업용 · 6축",
+  "description": "1.831 m 도달거리와 중공 손목을 갖춘 25 kg급 머시닝·물류 핸들링 로봇. 굽은 주물 링크, 감속기, 케이블 커넥터와 평행 그리퍼를 세밀하게 구성했습니다.",
+  "reach": 1.831,
+  "payloadKg": 25,
+  "massKg": 250,
+  "footprintDiameter": 0.71,
+  "joints": [
+    {
+      "name": "J1",
+      "label": "베이스 회전",
+      "pivot": [
+        0,
+        0,
+        0.24
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "minDeg": -170,
+      "maxDeg": 170,
+      "maxSpeedDeg": 210,
+      "homeDeg": 0
+    },
+    {
+      "name": "J2",
+      "label": "어깨 회전",
+      "pivot": [
+        0.075,
+        0,
+        0.425
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -100,
+      "maxDeg": 160,
+      "maxSpeedDeg": 210,
+      "homeDeg": -10
+    },
+    {
+      "name": "J3",
+      "label": "팔꿈치 회전",
+      "pivot": [
+        -0.075,
+        0,
+        1.2515
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -268,
+      "maxDeg": 190,
+      "maxSpeedDeg": 265,
+      "homeDeg": -70
+    },
+    {
+      "name": "J4",
+      "label": "전완 롤",
+      "pivot": [
+        -0.075,
+        0,
+        1.4665
+      ],
+      "axis": [
+        0.9560390114784241,
+        0.0,
+        -0.29323968291282654
+      ],
+      "minDeg": -200,
+      "maxDeg": 200,
+      "maxSpeedDeg": 420,
+      "homeDeg": 0
+    },
+    {
+      "name": "J5",
+      "label": "손목 피치",
+      "pivot": [
+        0.7759,
+        0,
+        1.2055
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -180,
+      "maxDeg": 180,
+      "maxSpeedDeg": 420,
+      "homeDeg": 0
+    },
+    {
+      "name": "J6",
+      "label": "공구 롤",
+      "pivot": [
+        0.86195,
+        0,
+        1.1791
+      ],
+      "axis": [
+        0.9560390114784241,
+        0.0,
+        -0.29323968291282654
+      ],
+      "minDeg": -360,
+      "maxDeg": 360,
+      "maxSpeedDeg": 720,
+      "homeDeg": 0
+    }
+  ],
+  "tcp": [
+    1.0579379796981812,
+    0.0,
+    1.118985891342163
+  ],
+  "sources": [
+    {
+      "title": "FANUC America M-20iD/25 공식 제품·사진·사양",
+      "url": "https://www.fanucamerica.com/products/robot/m-20id-25"
+    },
+    {
+      "title": "FANUC M-20iD/25 공식 도달범위·치수 도면",
+      "url": "https://cdn.craft.cloud/6166486b-1eb4-43d5-990c-ea573de4e750/assets/files/data-sheets/m-20id-25-datasheet.pdf"
+    }
+  ],
+  "note": "공식 사진과 사양을 참고해 새로 만든 근사 모델입니다. 중립 메탈릭 마감과 범용 그리퍼를 적용했습니다. 주물 외형·장착판·공구 치수 및 화면의 관절 영점은 시뮬레이션용이며 제조사 CAD나 실제 제어기 교정 데이터가 아닙니다. J6은 현행 제품 페이지의 720° 범위를 사용합니다.",
+  "geometry": {
+    "triangles": 31416,
+    "meshObjects": 36,
+    "rigJoints": 6
+  },
+  "referenceDimensionsMm": {
+    "shoulderHeight": 425,
+    "upperArm": 840,
+    "forearm": 890,
+    "elbowOffset": 215,
+    "baseOffset": 75,
+    "flangeOffset": 90
+  },
+  "assets": {
+    "robot": "/models/robots/fanuc-m20id25/robot.glb",
+    "blend": "/models/robots/fanuc-m20id25/scene.blend",
+    "thumbnail": "/models/robots/fanuc-m20id25/thumbnail.png"
+  }
+}

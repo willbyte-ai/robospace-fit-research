@@ -1,0 +1,16 @@
+{
+  "project": "RoboSpace Fit v2.0",
+  "version": "2.0.0-research.20260928",
+  "snapshot_date": "2026-09-28",
+  "source_commit": "0b5450938a3867e497381c2db55ac354d56eda38",
+  "release_tag": "v2.0.0-research-20260928",
+  "repository": "https://github.com/willbyte-ai/robospace-fit-research",
+  "update_policy": "Frozen one-time research snapshot; no automatic synchronization with internal development.",
+  "packaging_changes": [
+    "Academic research license, citation and sharing documentation added.",
+    "Package name/version/license metadata updated.",
+    "Internal hosting project association removed; local null bindings retained.",
+    "Git attributes mark binary assets without changing their contents."
+  ],
+  "application_code_changed": false
+}

@@ -1,0 +1,559 @@
+{
+  "slug": "logistics-sortation",
+  "title": "물류 분류·출하 공장",
+  "shortTitle": "물류·출하",
+  "industry": "물류 자동화",
+  "description": "8m 고층 랙, 바코드·치수 스캐너, 축적 롤러와 분류 슈트, 3개 출하 도크가 연결된 32×22m 물류 허브. 4축 평행 링크 로봇이 박스를 흡착해 팔레트에 적재합니다.",
+  "robotDescription": "4축 평행 링크 팔레타이저 · 다점 진공 그리퍼 · 가상 제원",
+  "scenario": {
+    "schemaVersion": "1.0",
+    "id": "logistics-sortation-v1",
+    "name": "고층 랙 물류 분류·팔레타이징 센터",
+    "factory": {
+      "width": 32,
+      "depth": 22,
+      "center": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "cell": {
+      "kind": "rect",
+      "center": {
+        "x": 0,
+        "y": -0.5
+      },
+      "width": 9,
+      "depth": 7
+    },
+    "robot": {
+      "name": "LP-2800",
+      "reach": 2.8,
+      "footprintDiameter": 1.49,
+      "safetyBuffer": 0.35,
+      "payloadKg": 80
+    },
+    "targets": [
+      {
+        "id": "pick",
+        "name": "축적 롤러 박스 피킹",
+        "position": {
+          "x": -1.82,
+          "y": 0.5
+        },
+        "equipmentId": "pick_lane"
+      },
+      {
+        "id": "place",
+        "name": "출하 팔레트 적재",
+        "position": {
+          "x": 1.85,
+          "y": 0.6
+        },
+        "equipmentId": "place_pallet"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "rack_01",
+        "name": "고층 팔레트 랙 01",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -12.0,
+            "y": 7.5475
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "rack_02",
+        "name": "고층 팔레트 랙 02",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.9,
+            "y": 7.5475
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "rack_03",
+        "name": "고층 팔레트 랙 03",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -3.8,
+            "y": 7.5475
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "rack_04",
+        "name": "고층 팔레트 랙 04",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 0.3,
+            "y": 7.5475
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "rack_05",
+        "name": "고층 팔레트 랙 05",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -12.0,
+            "y": 2.5475
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "rack_06",
+        "name": "고층 팔레트 랙 06",
+        "category": "보관 랙",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -12.0,
+            "y": -2.3525
+          },
+          "width": 3.64,
+          "depth": 1.685
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "infeed",
+        "name": "입고 롤러 컨베이어",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.0,
+            "y": 0.4045
+          },
+          "width": 5.3,
+          "depth": 1.421
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pick_lane",
+        "name": "피킹 축적 롤러",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -2.82625,
+            "y": 0.4045
+          },
+          "width": 2.5475,
+          "depth": 1.421
+        },
+        "blocksBase": true,
+        "sweepPolicy": "work-target"
+      },
+      {
+        "id": "scanner",
+        "name": "치수·바코드 스캐너",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -6.0,
+            "y": 0.484
+          },
+          "width": 1.35,
+          "depth": 1.682
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "sort_lane_1",
+        "name": "분류 슈트 1",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.0,
+            "y": 2.9315
+          },
+          "width": 4.8,
+          "depth": 1.337
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "sort_lane_2",
+        "name": "분류 슈트 2",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -3.47625,
+            "y": 4.3315
+          },
+          "width": 3.2475,
+          "depth": 1.337
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "place_pallet",
+        "name": "적재 목표 팔레트",
+        "category": "작업 대상",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 1.85,
+            "y": 0.5955
+          },
+          "width": 1.2,
+          "depth": 1.029
+        },
+        "blocksBase": true,
+        "sweepPolicy": "work-target"
+      },
+      {
+        "id": "empty_pallet",
+        "name": "빈 팔레트 공급 스택",
+        "category": "보관",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 3.9,
+            "y": 0.7
+          },
+          "width": 1.2,
+          "depth": 1.02
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "controller",
+        "name": "팔레타이저 제어반",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 2.6,
+            "y": -2.5185
+          },
+          "width": 1.1,
+          "depth": 0.937
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "fence_1",
+        "name": "팔레타이징 안전 펜스 1",
+        "category": "안전 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 0.0,
+            "y": 3.15
+          },
+          "width": 6.2,
+          "depth": 0.2
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "fence_2",
+        "name": "팔레타이징 안전 펜스 2",
+        "category": "안전 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 4.8,
+            "y": -1.45
+          },
+          "width": 2.9,
+          "depth": 0.2
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "dock_1",
+        "name": "출하 도크 1",
+        "category": "도크",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 5.8825,
+            "y": 9.685
+          },
+          "width": 3.955,
+          "depth": 2.35
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "dock_2",
+        "name": "출하 도크 2",
+        "category": "도크",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 9.8825,
+            "y": 9.685
+          },
+          "width": 3.955,
+          "depth": 2.35
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "dock_3",
+        "name": "출하 도크 3",
+        "category": "도크",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 13.8825,
+            "y": 9.685
+          },
+          "width": 3.955,
+          "depth": 2.35
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "outbound_1",
+        "name": "출하 대기 팔레트 1",
+        "category": "적재물",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 7.6,
+            "y": 5.6955
+          },
+          "width": 1.2,
+          "depth": 1.029
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "outbound_2",
+        "name": "출하 대기 팔레트 2",
+        "category": "적재물",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 10.0,
+            "y": 5.6955
+          },
+          "width": 1.2,
+          "depth": 1.029
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "outbound_3",
+        "name": "출하 대기 팔레트 3",
+        "category": "적재물",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 12.4,
+            "y": 5.6955
+          },
+          "width": 1.2,
+          "depth": 1.029
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "outbound_4",
+        "name": "출하 대기 팔레트 4",
+        "category": "적재물",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 8.1,
+            "y": 2.6955
+          },
+          "width": 1.2,
+          "depth": 1.029
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "forklift",
+        "name": "전동 지게차",
+        "category": "이동 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.8,
+            "y": -6.2425
+          },
+          "width": 1.524,
+          "depth": 3.705
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "amr",
+        "name": "자율 이송 AMR",
+        "category": "이동 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.8,
+            "y": -6.5
+          },
+          "width": 1.7,
+          "depth": 1.08
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "A",
+        "name": "롤러–팔레트 중앙",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "description": "입고 롤러와 적재 팔레트 사이의 도달·이격 여유를 확보한 배치."
+      },
+      {
+        "id": "B",
+        "name": "작업 통로 인접",
+        "position": {
+          "x": -0.7,
+          "y": -2.5
+        },
+        "description": "작업 통로 측으로 이동해 팔레트 도달거리가 부족한 비교 배치."
+      },
+      {
+        "id": "C",
+        "name": "제어반 점유 위치",
+        "position": {
+          "x": 2.6,
+          "y": -2.5
+        },
+        "description": "제어반과 베이스가 겹치는 배치로 충돌 검토를 위한 비교 후보."
+      }
+    ],
+    "pathways": [
+      {
+        "id": "worker",
+        "name": "검수·작업자 통로",
+        "kind": "worker",
+        "width": 1.2,
+        "points": [
+          {
+            "x": -10,
+            "y": -4.4
+          },
+          {
+            "x": 4.6,
+            "y": -4.4
+          },
+          {
+            "x": 4.6,
+            "y": 2
+          }
+        ]
+      },
+      {
+        "id": "cart",
+        "name": "AMR 출하 이송로",
+        "kind": "cart",
+        "width": 1.8,
+        "points": [
+          {
+            "x": -14,
+            "y": -8.35
+          },
+          {
+            "x": 13,
+            "y": -8.35
+          },
+          {
+            "x": 13,
+            "y": 3.8
+          }
+        ]
+      }
+    ],
+    "roi": {
+      "investment": 125000000,
+      "workersBefore": 3,
+      "workersAfter": 1,
+      "hoursPerDay": 12,
+      "daysPerMonth": 24,
+      "hourlyWage": 22000,
+      "monthlyMaintenance": 650000
+    }
+  },
+  "camera": {
+    "cellOffset": [
+      5.0,
+      4.5,
+      6.6
+    ],
+    "targetHeight": 1.35,
+    "overviewPosition": [
+      31,
+      28,
+      35
+    ]
+  },
+  "stats": {
+    "factoryTriangles": 175208,
+    "robotTriangles": 35156,
+    "factoryMeshes": 206,
+    "robotMeshes": 27
+  },
+  "provenance": "Original Blender MCP procedural virtual testbed; not measured plant/OEM CAD"
+}

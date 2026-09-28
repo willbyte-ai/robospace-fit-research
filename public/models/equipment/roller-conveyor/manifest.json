@@ -1,0 +1,39 @@
+{
+  "id": "roller-conveyor",
+  "name": "구동 롤러 컨베이어",
+  "description": "기어모터, 광전 센서, 케이블 트레이와 높이 조절 다리를 갖춘 구동 롤러 컨베이어",
+  "modelKind": "original-concept-equipment",
+  "units": "meters",
+  "upAxis": "Z",
+  "origin": "ground center",
+  "dimensions": {
+    "width": 3.0,
+    "depth": 0.85,
+    "height": 0.9
+  },
+  "geometry": {
+    "meshCount": 8,
+    "materialCount": 8,
+    "triangleCount": 28540,
+    "bounds": {
+      "min": [
+        -1.5,
+        -0.42500001192092896,
+        0.0
+      ],
+      "max": [
+        1.5,
+        0.42149999737739563,
+        0.8999999761581421
+      ]
+    }
+  },
+  "details": [
+    "37 chamfered steel rollers with independent shafts and bearing covers",
+    "Three braced support portals with threaded leveling feet",
+    "Finned gearmotor, enclosed transmission, cable tray and routed wiring",
+    "Paired photoelectric sensors and local control pod",
+    "Open C-channel side frames and adjustable stainless guide rails"
+  ],
+  "note": "Original conceptual visualization, not manufacturer CAD or certified equipment specifications."
+}

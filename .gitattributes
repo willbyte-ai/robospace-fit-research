@@ -1,0 +1,6 @@
+# Preserve original binary assets without text diffs or line-ending conversion.
+*.pdf binary
+*.glb binary
+*.blend binary
+*.png binary
+*.webp binary

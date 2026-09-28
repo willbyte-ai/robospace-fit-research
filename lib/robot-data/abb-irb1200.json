@@ -1,0 +1,141 @@
+{
+  "id": "abb-irb1200",
+  "name": "ABB IRB 1200-5/0.9",
+  "manufacturer": "ABB",
+  "category": "소형 정밀 산업용",
+  "description": "백색 곡면 주물과 내부 배선 구조의 6축 소형 산업용 로봇. 머신 텐딩·정밀 조립용, 평행 그리퍼를 장착한 시각화 모델.",
+  "reach": 0.9,
+  "payloadKg": 5,
+  "footprintDiameter": 0.3,
+  "massKg": 54,
+  "joints": [
+    {
+      "name": "J1",
+      "label": "베이스 회전",
+      "pivot": [
+        0,
+        0,
+        0.224
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "minDeg": -170,
+      "maxDeg": 170,
+      "maxSpeedDeg": 288,
+      "homeDeg": 0
+    },
+    {
+      "name": "J2",
+      "label": "어깨",
+      "pivot": [
+        0,
+        0,
+        0.399
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -100,
+      "maxDeg": 130,
+      "maxSpeedDeg": 240,
+      "homeDeg": 30
+    },
+    {
+      "name": "J3",
+      "label": "팔꿈치",
+      "pivot": [
+        0.22399999999999998,
+        0,
+        0.7869793808954286
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -200,
+      "maxDeg": 70,
+      "maxSpeedDeg": 297,
+      "homeDeg": -30
+    },
+    {
+      "name": "J4",
+      "label": "전완 회전",
+      "pivot": [
+        0.357,
+        0,
+        0.7869793808954286
+      ],
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "minDeg": -270,
+      "maxDeg": 270,
+      "maxSpeedDeg": 400,
+      "homeDeg": 0
+    },
+    {
+      "name": "J5",
+      "label": "손목 굽힘",
+      "pivot": [
+        0.675,
+        0,
+        0.7869793808954286
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "minDeg": -130,
+      "maxDeg": 130,
+      "maxSpeedDeg": 405,
+      "homeDeg": 90
+    },
+    {
+      "name": "J6",
+      "label": "공구 회전",
+      "pivot": [
+        0.675,
+        0,
+        0.7269793808954286
+      ],
+      "axis": [
+        0,
+        0,
+        -1
+      ],
+      "minDeg": -400,
+      "maxDeg": 400,
+      "maxSpeedDeg": 600,
+      "homeDeg": 0
+    }
+  ],
+  "tcp": [
+    0.675,
+    0,
+    0.5869793808954286
+  ],
+  "sources": [
+    {
+      "title": "ABB IRB 1200 — original generation product and official photographs",
+      "url": "https://new.abb.com/products/robotics/nl/onze-robots/articulated-robots/irb-1200"
+    },
+    {
+      "title": "ABB IRB 1200 datasheet, 2025-02-24 — 5/0.9 original generation",
+      "url": "https://library.e.abb.com/public/b4a87b4973604837848d65132d1387af/IRB1200%20datasheet_20250224.pdf"
+    }
+  ],
+  "note": "공식 제품 사진과 작업 범위 도면을 참고하여 직접 제작한 근사 시각화 모델입니다. 구형 IRB 1200-5/0.9 사양을 적용하며 Gen2가 아닙니다. 외형·링크 치수와 그리퍼는 재구성되어 제조사 CAD 및 제어기 검증 모델과 다릅니다. 도달거리 0.9 m는 제조사 정격값이며 추가 공구 길이는 별도입니다.",
+  "geometry": {
+    "triangles": 18852,
+    "meshes": 40
+  }
+}

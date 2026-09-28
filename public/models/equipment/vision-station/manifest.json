@@ -1,0 +1,47 @@
+{
+  "id": "vision-station",
+  "name": "비전 검사 스테이션",
+  "description": "Slotted aluminum gantry with fastened gussets; transparent side and rear safety panels; twin downward cameras with lens barrels and luminous ring lights; belt transfer with servo drive; three detailed fixture trays; overhead illumination and camera controller; electronic cabinet; local inspection display; photoelectric sensors and routed cables",
+  "dimensions": {
+    "width": 1.4,
+    "depth": 1.1,
+    "height": 2.1
+  },
+  "units": "meters",
+  "coordinateSystem": "Blender XY floor / Z up; glTF Y up",
+  "origin": "Ground plane at footprint center",
+  "source": "Original procedural visualization; no manufacturer CAD used",
+  "geometry": {
+    "meshes": 9,
+    "triangles": 28436,
+    "bounds": {
+      "min": [
+        -0.6800000071525574,
+        -0.5289999842643738,
+        0.0
+      ],
+      "max": [
+        0.6800000071525574,
+        0.49300000071525574,
+        2.0320000648498535
+      ]
+    }
+  },
+  "materials": "Neutral metal, white enamel, graphite and restrained metallic blue",
+  "features": [
+    "Slotted aluminum gantry with fastened gussets",
+    "transparent side and rear safety panels",
+    "twin downward cameras with lens barrels and luminous ring lights",
+    "belt transfer with servo drive",
+    "three detailed fixture trays",
+    "overhead illumination and camera controller",
+    "electronic cabinet",
+    "local inspection display",
+    "photoelectric sensors and routed cables"
+  ],
+  "files": {
+    "model": "asset.glb",
+    "editable": "scene.blend",
+    "thumbnail": "thumbnail.png"
+  }
+}

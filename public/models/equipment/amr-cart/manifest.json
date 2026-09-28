@@ -1,0 +1,39 @@
+{
+  "id": "amr-cart",
+  "name": "리프트형 자율주행 운반로봇",
+  "description": "범퍼, 안전 스캐너, 구동 휠과 승강 데크를 갖춘 자율주행 운반로봇 개념 모델",
+  "modelKind": "original-concept-equipment",
+  "units": "meters",
+  "upAxis": "Z",
+  "origin": "ground center",
+  "dimensions": {
+    "width": 1.0,
+    "depth": 0.75,
+    "height": 0.8
+  },
+  "geometry": {
+    "meshCount": 9,
+    "materialCount": 9,
+    "triangleCount": 15760,
+    "bounds": {
+      "min": [
+        -0.5,
+        -0.375,
+        0.0
+      ],
+      "max": [
+        0.5,
+        0.375,
+        0.7999999523162842
+      ]
+    }
+  },
+  "details": [
+    "Chamfered chassis with replaceable bumper ring and service panels",
+    "Differential drive wheels, molded tire tread and four swivel caster assemblies",
+    "Front/rear depth sensors, lidar window, docking contacts and local display",
+    "Four guided telescopic lifting columns, paired lead screws and cross braces",
+    "Raised loading deck with rubber support strips and mounting holes"
+  ],
+  "note": "Original conceptual visualization, not manufacturer CAD or certified equipment specifications."
+}

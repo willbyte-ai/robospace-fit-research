@@ -1,0 +1,591 @@
+{
+  "slug": "electronics-assembly",
+  "title": "전자부품 정밀 조립 공장",
+  "shortTitle": "전자 조립",
+  "industry": "전자·반도체",
+  "description": "SMT 실장·리플로·AOI 라인과 정밀 SCARA 조립·전기 검사를 연결하는 ESD 클린룸입니다. 피더 릴, PCB 지그, 현미경 리워크 작업대와 청정 공조를 세부 모델링했습니다.",
+  "robotDescription": "4축 SCARA · 수직 퀼 · 정밀 평행 그리퍼 · 가상 제원",
+  "scenario": {
+    "schemaVersion": "1.0",
+    "id": "electronics-assembly-v1",
+    "name": "전자부품 정밀 조립·전기 검사 셀",
+    "factory": {
+      "width": 22,
+      "depth": 18,
+      "center": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "cell": {
+      "kind": "rect",
+      "center": {
+        "x": 0.3,
+        "y": 0.4
+      },
+      "width": 6.6,
+      "depth": 5.4
+    },
+    "robot": {
+      "name": "SC-1400 Precision SCARA",
+      "reach": 1.4,
+      "footprintDiameter": 0.44,
+      "safetyBuffer": 0.25,
+      "payloadKg": 4
+    },
+    "targets": [
+      {
+        "id": "pick",
+        "name": "PCB 공급 지그",
+        "position": {
+          "x": -1.05,
+          "y": -0.47
+        },
+        "equipmentId": "pcb_input_fixture"
+      },
+      {
+        "id": "place",
+        "name": "전기 검사 지그",
+        "position": {
+          "x": 1.05,
+          "y": -0.47
+        },
+        "equipmentId": "electrical_test_fixture"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "solder_printer",
+        "name": "STENCIL / 01",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.355,
+            "y": 4.0175
+          },
+          "width": 2.73,
+          "depth": 1.915
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "chip_mounter",
+        "name": "SMT / 02",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -4.716,
+            "y": 4.0175
+          },
+          "width": 2.572,
+          "depth": 2.015
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "reflow_oven",
+        "name": "REFLOW / 03",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -1.751,
+            "y": 4.1655
+          },
+          "width": 3.552,
+          "depth": 1.619
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "aoi_inline",
+        "name": "3D AOI / 04",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 1.095,
+            "y": 4.1655
+          },
+          "width": 2.43,
+          "depth": 1.419
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_loader",
+        "name": "PCB 매거진 로더",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -9.33,
+            "y": 4.1755
+          },
+          "width": 1.1,
+          "depth": 1.269
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_unloader",
+        "name": "PCB 매거진 언로더",
+        "category": "설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 3.0,
+            "y": 4.1755
+          },
+          "width": 1.1,
+          "depth": 1.269
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_input_fixture",
+        "name": "PCB 공급 정렬 지그",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -1.05,
+            "y": -0.475
+          },
+          "width": 0.78,
+          "depth": 0.97
+        },
+        "blocksBase": true,
+        "sweepPolicy": "work-target"
+      },
+      {
+        "id": "electrical_test_fixture",
+        "name": "전기 검사·배출 지그",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 1.05,
+            "y": -0.475
+          },
+          "width": 0.78,
+          "depth": 0.97
+        },
+        "blocksBase": true,
+        "sweepPolicy": "work-target"
+      },
+      {
+        "id": "scara_controller",
+        "name": "SCARA 제어반",
+        "category": "제어반",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 2.8,
+            "y": 0.7255
+          },
+          "width": 0.82,
+          "depth": 0.749
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "safety_scanner_-1",
+        "name": "안전 레이저 스캐너 좌",
+        "category": "안전 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -1.8,
+            "y": 1.213
+          },
+          "width": 0.24,
+          "depth": 0.254
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "safety_scanner_1",
+        "name": "안전 레이저 스캐너 우",
+        "category": "안전 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 1.8,
+            "y": 1.213
+          },
+          "width": 0.24,
+          "depth": 0.254
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_rework_1",
+        "name": "ESD 현미경 리워크 작업대",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.0,
+            "y": 1.8775
+          },
+          "width": 2.12,
+          "depth": 1.195
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_rework_2",
+        "name": "ESD 검사·프로그래밍 작업대",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 8.8,
+            "y": 1.8775
+          },
+          "width": 2.12,
+          "depth": 1.195
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_test_1",
+        "name": "ESD 검사·프로그래밍 작업대",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.0,
+            "y": -2.6725
+          },
+          "width": 2.12,
+          "depth": 1.195
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_test_2",
+        "name": "ESD 현미경 리워크 작업대",
+        "category": "작업대",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 8.8,
+            "y": -2.6725
+          },
+          "width": 2.12,
+          "depth": 1.195
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_stool_0",
+        "name": "ESD 작업 의자 1",
+        "category": "작업 의자",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.0248,
+            "y": -0.05
+          },
+          "width": 0.5203,
+          "depth": 0.5645
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_stool_1",
+        "name": "ESD 작업 의자 2",
+        "category": "작업 의자",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 8.8248,
+            "y": -0.05
+          },
+          "width": 0.5203,
+          "depth": 0.5645
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_stool_2",
+        "name": "ESD 작업 의자 3",
+        "category": "작업 의자",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.0248,
+            "y": -4.55
+          },
+          "width": 0.5203,
+          "depth": 0.5645
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "esd_stool_3",
+        "name": "ESD 작업 의자 4",
+        "category": "작업 의자",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 8.8248,
+            "y": -4.55
+          },
+          "width": 0.5203,
+          "depth": 0.5645
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_trolley_0",
+        "name": "ESD PCB 매거진 카트 1",
+        "category": "이동 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -6.1,
+            "y": -3.414
+          },
+          "width": 0.85,
+          "depth": 0.81
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_trolley_1",
+        "name": "ESD PCB 매거진 카트 2",
+        "category": "이동 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -3.65,
+            "y": -3.414
+          },
+          "width": 0.85,
+          "depth": 0.81
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "pcb_trolley_2",
+        "name": "ESD PCB 매거진 카트 3",
+        "category": "이동 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -8.65,
+            "y": -3.414
+          },
+          "width": 0.85,
+          "depth": 0.81
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "feeder_rack_0",
+        "name": "SMT 피더 준비 랙 1",
+        "category": "보관 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -7.6,
+            "y": 7.18
+          },
+          "width": 1.8,
+          "depth": 0.85
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "feeder_rack_1",
+        "name": "SMT 피더 준비 랙 2",
+        "category": "보관 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -4.2,
+            "y": 7.18
+          },
+          "width": 1.8,
+          "depth": 0.85
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "air_shower",
+        "name": "클린룸 에어샤워",
+        "category": "출입 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": -9.45,
+            "y": 7.12
+          },
+          "width": 1.56,
+          "depth": 1.3
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "cleanroom_lockers",
+        "name": "방진복·공구 수납장",
+        "category": "보관 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 6.65,
+            "y": 7.701
+          },
+          "width": 3.2,
+          "depth": 0.718
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      },
+      {
+        "id": "consumable_rack",
+        "name": "청정 소모품 보관 선반",
+        "category": "보관 설비",
+        "footprint": {
+          "kind": "rect",
+          "center": {
+            "x": 9.2,
+            "y": 6.0
+          },
+          "width": 1.32,
+          "depth": 0.8
+        },
+        "blocksBase": true,
+        "sweepPolicy": "advisory"
+      }
+    ],
+    "candidates": [
+      {
+        "id": "A",
+        "name": "지그 사이 정밀 조립 위치",
+        "position": {
+          "x": 0,
+          "y": 0.12
+        },
+        "description": "양쪽 PCB 지그를 함께 다루는 셀 중앙 후보입니다."
+      },
+      {
+        "id": "B",
+        "name": "후방 서비스 공간 후보",
+        "position": {
+          "x": 0,
+          "y": 1.4
+        },
+        "description": "후방 유지보수 공간은 확보되지만 지그까지 거리가 늘어나는 후보입니다."
+      },
+      {
+        "id": "C",
+        "name": "제어반 측면 후보",
+        "position": {
+          "x": 2.8,
+          "y": 0.8
+        },
+        "description": "제어반과의 실제 설치 간섭을 비교하기 위한 후보입니다."
+      }
+    ],
+    "pathways": [
+      {
+        "id": "worker",
+        "name": "ESD 작업자 보행 통로",
+        "kind": "worker",
+        "width": 1.0,
+        "points": [
+          {
+            "x": -9.9,
+            "y": -1.9
+          },
+          {
+            "x": 3.9,
+            "y": -1.9
+          },
+          {
+            "x": 3.9,
+            "y": 6.5
+          }
+        ]
+      },
+      {
+        "id": "cart",
+        "name": "PCB 카트 물류 동선",
+        "kind": "cart",
+        "width": 1.2,
+        "points": [
+          {
+            "x": -9.9,
+            "y": -5.4
+          },
+          {
+            "x": 3.8,
+            "y": -5.4
+          },
+          {
+            "x": 3.8,
+            "y": 6.6
+          }
+        ]
+      }
+    ],
+    "roi": {
+      "investment": 92000000,
+      "workersBefore": 2,
+      "workersAfter": 1,
+      "hoursPerDay": 8,
+      "daysPerMonth": 22,
+      "hourlyWage": 23000,
+      "monthlyMaintenance": 420000
+    }
+  },
+  "camera": {
+    "cellOffset": [
+      3.25,
+      3.1,
+      4.5
+    ],
+    "targetHeight": 1.05,
+    "overviewPosition": [
+      22,
+      23,
+      28
+    ]
+  },
+  "stats": {
+    "factoryTriangles": 157764,
+    "robotTriangles": 31480,
+    "factoryMeshes": 203,
+    "robotMeshes": 29
+  },
+  "provenance": "Original Blender MCP procedural virtual testbed; not measured plant/OEM CAD"
+}

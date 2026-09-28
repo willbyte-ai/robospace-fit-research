@@ -1,0 +1,47 @@
+{
+  "id": "cnc-mill",
+  "name": "CNC 머시닝 센터",
+  "description": "Partly open sliding safety door with transparent window; enclosed milling table with T slots and two vises; detailed vertical spindle and tool; eight-position tool carousel; segmented coolant lines; telescopic way covers; operator display and jog controls; internal lighting; chip conveyor and leveling feet",
+  "dimensions": {
+    "width": 2.4,
+    "depth": 2.2,
+    "height": 2.6
+  },
+  "units": "meters",
+  "coordinateSystem": "Blender XY floor / Z up; glTF Y up",
+  "origin": "Ground plane at footprint center",
+  "source": "Original procedural visualization; no manufacturer CAD used",
+  "geometry": {
+    "meshes": 9,
+    "triangles": 18356,
+    "bounds": {
+      "min": [
+        -1.199,
+        -1.0990000000000002,
+        0.0
+      ],
+      "max": [
+        1.1679645586781036,
+        1.02397958995387,
+        2.5799999237060547
+      ]
+    }
+  },
+  "materials": "Neutral metal, white enamel, graphite and restrained metallic blue",
+  "features": [
+    "Partly open sliding safety door with transparent window",
+    "enclosed milling table with T slots and two vises",
+    "detailed vertical spindle and tool",
+    "eight-position tool carousel",
+    "segmented coolant lines",
+    "telescopic way covers",
+    "operator display and jog controls",
+    "internal lighting",
+    "chip conveyor and leveling feet"
+  ],
+  "files": {
+    "model": "asset.glb",
+    "editable": "scene.blend",
+    "thumbnail": "thumbnail.png"
+  }
+}
